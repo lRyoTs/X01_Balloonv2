@@ -9,10 +9,15 @@ public class MoveLeftX : MonoBehaviour
     private float leftBound = -20;
     private float rigthBound = 20;
 
+
     // Start is called before the first frame update
     void Start()
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
+        if (transform.position.x > 0)
+        {
+            speed *= -1; //Change dirrection
+        }
     }
 
     // Update is called once per frame

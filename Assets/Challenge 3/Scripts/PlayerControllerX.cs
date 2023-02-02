@@ -60,7 +60,7 @@ public class PlayerControllerX : MonoBehaviour
         {
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
-            //Check if Big
+            //Check if collided with Big
             if (other.gameObject.name.Contains("Big"))
             {
                 playerCounter += 5; //Add 5 to counter
@@ -68,6 +68,7 @@ public class PlayerControllerX : MonoBehaviour
             else {
                 playerCounter++; //Add 1
             }
+            Debug.Log($"Current score: {playerCounter}");
             Destroy(other.gameObject);
 
         }
@@ -78,7 +79,7 @@ public class PlayerControllerX : MonoBehaviour
 
     }
 
-    //Function that controlls gameover
+    //Function that controls Gameover
     private void GameOver() {
         explosionParticle.Play();
         playerAudio.PlayOneShot(explodeSound, 1.0f);
